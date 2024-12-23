@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Journal Project Outline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            padding: 5px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            font-family: "Courier New", monospace;
+        }
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .box pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Command Line Journal Application Project Outline</h1>
+    
+    <p>This is a beginner-friendly guide to help you create a simple command-line journal application in Python. The program allows users to add, view, search, and delete journal entries.</p>
+    
+    <div class="box">
+        <h2>1. Introduction</h2>
+        <p>The goal of this project is to practice basic programming concepts such as handling lists, dictionaries, loops, and user input. You'll be creating a simple journal application that allows users to interact with their journal.</p>
+    </div>
+    
+    <div class="box">
+        <h2>2. Program Setup</h2>
+        <p>The program will store journal entries in a list called <code>journal</code>. Each entry will be a dictionary with the following information:</p>
+        <ul>
+            <li><code>ID</code>: A unique identifier for the entry.</li>
+            <li><code>date</code>: The date the entry was created.</li>
+            <li><code>title</code>: A title for the journal entry.</li>
+            <li><code>content</code>: The body text of the journal entry.</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <h2>3. Functions and Their Purpose</h2>
+        
+        <h3>3.1 Add Entry</h3>
+        <p><strong>Function Name:</strong> <code>add_entry()</code></p>
+        <p><strong>Purpose:</strong> This function will allow the user to add a new journal entry.</p>
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Ask the user to input the date. If no date is entered, use today's date.</li>
+            <li>Prompt the user for a unique entry ID, a title, and the content of the entry.</li>
+            <li>Store the entry as a dictionary with keys <code>ID</code>, <code>date</code>, <code>title</code>, and <code>content</code>.</li>
+            <li>Append the new entry to the <code>journal</code> list.</li>
+            <li>Confirm that the entry was added.</li>
+        </ul>
+        
+        <h3>3.2 View Entries</h3>
+        <p><strong>Function Name:</strong> <code>view_entries()</code></p>
+        <p><strong>Purpose:</strong> This function displays all journal entries stored in the program.</p>
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Check if there are any journal entries in the list.</li>
+            <li>If there are entries, print each entry's <code>ID</code>, <code>title</code>, <code>date</code>, and <code>content</code>.</li>
+            <li>If the journal is empty, inform the user that no entries exist.</li>
+        </ul>
+
+        <h3>3.3 Search Entries</h3>
+        <p><strong>Function Name:</strong> <code>search_entries()</code></p>
+        <p><strong>Purpose:</strong> This function allows the user to search for an entry by its unique ID.</p>
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Ask the user to enter an entry ID.</li>
+            <li>Search through the <code>journal</code> list for the entry with the matching ID.</li>
+            <li>If the entry is found, display its <code>date</code>, <code>title</code>, and <code>content</code>.</li>
+            <li>If the entry is not found, inform the user that the entry doesn't exist.</li>
+        </ul>
+
+        <h3>3.4 Delete Entry</h3>
+        <p><strong>Function Name:</strong> <code>delete_entry()</code></p>
+        <p><strong>Purpose:</strong> This function allows the user to delete a journal entry by its ID.</p>
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Display all journal entries using the <code>view_entries()</code> function.</li>
+            <li>Ask the user for the ID of the entry they wish to delete.</li>
+            <li>Search for the entry by ID and delete it from the <code>journal</code> list.</li>
+            <li>Confirm that the entry was deleted.</li>
+            <li>If the entry ID is invalid, inform the user.</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>4. Main Program Loop</h2>
+        <p><strong>Function Name:</strong> <code>main()</code></p>
+        <p><strong>Purpose:</strong> This function will run the main menu, allowing the user to select different actions.</p>
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Display a menu with the following options:</li>
+            <ul>
+                <li>1: Add a new entry.</li>
+                <li>2: View all entries.</li>
+                <li>3: Search for an entry by ID.</li>
+                <li>4: Delete an entry by ID.</li>
+                <li>5: Exit the program.</li>
+            </ul>
+            <li>Take the user's input to choose an option.</li>
+            <li>Call the appropriate function based on the user's choice.</li>
+            <li>If the user selects option 5, exit the program with a goodbye message.</li>
+            <li>Repeat the menu until the user chooses to exit.</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>5. How the Program Works</h2>
+        <p>The program stores journal entries in the <code>journal</code> list. Each entry is a dictionary, which stores the <code>ID</code>, <code>date</code>, <code>title</code>, and <code>content</code> of the journal entry.</p>
+        <p>Here's an example of how the program works:</p>
+        <ul>
+            <li><strong>Adding Entries:</strong> Use <code>add_entry()</code> to add a new journal entry.</li>
+            <li><strong>Viewing Entries:</strong> Use <code>view_entries()</code> to see all stored entries.</li>
+            <li><strong>Searching Entries:</strong> Use <code>search_entries()</code> to search for a specific entry by its ID.</li>
+            <li><strong>Deleting Entries:</strong> Use <code>delete_entry()</code> to remove an entry by its ID.</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>6. Example of Using the Program</h2>
+        <h3>Scenario 1: Adding a Journal Entry</h3>
+        <pre>
+Step 1: Select option 1: Add Entry
+Step 2: Enter a date, or leave blank for today
+Step 3: Enter an ID, title, and content for the entry
+Step 4: Confirm that the entry was added
+        </pre>
+
+        <h3>Scenario 2: Viewing Journal Entries</h3>
+        <pre>
+Step 1: Select option 2: View Entries
+Step 2: View all journal entries displayed
+        </pre>
+
+        <h3>Scenario 3: Searching for an Entry</h3>
+        <pre>
+Step 1: Select option 3: Search Entries
+Step 2: Enter the ID of the entry to search for
+Step 3: View the details of the entry
+        </pre>
+
+        <h3>Scenario 4: Deleting an Entry</h3>
+        <pre>
+Step 1: Select option 4: Delete Entry
+Step 2: View all entries and choose the ID to delete
+Step 3: Confirm that the entry was deleted
+        </pre>
+    </div>
+
+    <div class="box">
+        <h2>7. Conclusion</h2>
+        <p>This project helps you practice basic input/output, working with lists and dictionaries, and implementing simple functions in Python. Once completed, you can enhance it by adding features like saving the journal entries to a file or implementing additional search options.</p>
+    </div>
+
+</body>
+</html>
